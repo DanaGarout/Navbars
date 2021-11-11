@@ -140,6 +140,7 @@
   }
   .nav__name{
       font-size: var(--tiny-font-size);
+      display: none;
   }
   .nav__icon{
       font-size: 1.5rem;
@@ -151,7 +152,78 @@
       color: var(--first-color);
       transition: .3s;
   }
+  /* Minimalist design,active link */
+  .active-link::before{
+    content: '';
+    position: absolute;
+    bottom: -.5rem;
+    width: 4px;
+    height: 4px;
+    background-color: var(--first-color);
+    border-radius: 50%;
+
+  }
   /* change background header */
   .scroll-header{
     box-shadow: 0 1px 12px hsla(var(--hue), var(--sat), 15%, 0.15);
   }
+
+  /* MEDIA QUERIES */
+  /* for small devices */
+
+  /* remove if you choose, the minimalist design */
+/* @media screen and (max-width: 320px){
+    .nav__name{
+        display: none;
+    }
+} */
+  /* For mediam devices */
+@media screen and (min-width:576px){
+    .nav__list{
+        justify-content: center;
+        column-gap: 3rem;
+    }
+}
+@media screen and (min-width:767px){
+    body{
+        margin: 0;
+    }
+    .section{
+        padding: 7rem 0 2rem;
+    }
+    .nav{
+        height: calc(var(--header-height) + 1.5rem);
+    }
+    .nav__img{
+        display: none;
+    }
+    .nav__icon{
+        display: none;
+    }
+    .nav__name{
+        font-size: var(--normal-font-size);
+        display: block;
+    }
+    .nav__link:hover{
+        color: var(--first-color);
+    }
+    /* .active-link::before {
+        content: '';
+        position: absolute;
+        bottom: -.75rem;
+        width: 4px;
+        height: 4px;
+        background-color: var(--first-color);
+        border-radius: 50%;
+      } */
+      .active-link::before{
+          bottom: -.75rem;
+      }
+}
+  /* for large devices */
+@media screen and (min-width: 1024px){
+    .container{
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
